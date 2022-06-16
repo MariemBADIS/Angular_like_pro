@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular_like_pro';
+
+  counterProgress: number = 0;
+  totalCountDown: number = 15;
+
+  constructor() {
+  }
+
+  updateProgress($event: any) {
+    this.counterProgress = (this.totalCountDown - $event) / this.totalCountDown * 100;
+  }
+
+  countdownFinish() {
+    console.log('countdown has finished ');
+  }
+
 }
